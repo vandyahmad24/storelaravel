@@ -33,4 +33,11 @@ Route::get('/dashboard/account', 'DashboardSettingController@account')->name('da
 Route::get('/register/success', 'Auth\RegisterController@success')->name('register-success');
 
 
+//untuk admin
+Route::prefix('admin')
+		->namespace('admin')
+		// ->middleware(['atuh','admin'])
+		->group(function(){
+			Route::get('/','DashboardController@index')->name('admin-dashboard');
+		});
 Auth::routes();
