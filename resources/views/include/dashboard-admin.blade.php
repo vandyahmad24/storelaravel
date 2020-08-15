@@ -6,7 +6,7 @@
           <img src="/images/admin.png" class="mv-4" style="max-width: 150px;" alt="">
         </div>
         <div class="list-group list-group-flush">
-          <a href="{{route('dashboard')}}" class="list-group-item list-group-item-action">Dashboard</a>
+          <a href="{{route('admin-dashboard')}}" class="list-group-item list-group-item-action">Dashboard</a>
           <a href="{{route('dashboard-prdouct')}}" class="list-group-item list-group-item-action ">Categories</a>
           <a href="{{route('dashboard-prdouct')}}" class="list-group-item list-group-item-action ">Product</a>
           <a href="{{route('dashboard-transaction')}}" class="list-group-item list-group-item-action ">Transactions</a>
