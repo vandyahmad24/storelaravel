@@ -39,5 +39,6 @@ Route::prefix('admin')
 		// ->middleware(['atuh','admin'])
 		->group(function(){
 			Route::get('/','DashboardController@index')->name('admin-dashboard');
+			Route::resource('category','CategoryController');
 		});
 Auth::routes();
