@@ -18,6 +18,7 @@ Route::get('/categories/{id}', 'CategoryController@detail')->name('category-deta
 Route::get('/detail/{id}', 'DetailController@index')->name('detail');
 Route::post('/detail/{id}', 'DetailController@add')->name('detail-add');
 Route::get('/cart', 'CartController@index')->name('cart');
+Route::delete('/cart/delete/{id}', 'CartController@delete')->name('cart-delete');
 Route::get('/success', 'CartController@success')->name('success');
 
 Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
