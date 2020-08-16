@@ -18,13 +18,69 @@
           <li class="nav-item">
             <a href="/index.html" class="nav-link">Rewards</a>
           </li>
+          @guest
           <li class="nav-item">
-            <a href="/index.html" class="nav-link">Sign Up</a>
+            <a href="{{route('register')}}" class="nav-link">Sign Up</a>
           </li>
           <li class="nav-item">
-            <a href="/index.html" class="btn btn-success nav-link px-4 text-white">Sign in</a>
+            <a href="{{route('login')}}" class="btn btn-success nav-link px-4 text-white">Sign in</a>
           </li>
+          @endguest
         </ul>
+        @auth
+        <ul class="navbar-nav d-none d-lg-flex">
+            <li class="nav-item dropdown">
+              <a
+                href="#"
+                class="nav-link"
+                id="navbarDropdown"
+                role="button"
+                data-toggle="dropdown"
+              >
+                <img
+                  src="/images/icon-user.png"
+                  alt=""
+                  class="rounded-circle mr-2 profile-picture"
+                />
+                Hi, {{Auth::user()->name}}
+              </a>
+              <div class="dropdown-menu">
+                <a href="{{route('dashboard')}}" class="dropdown-item">Dashboard</a>
+                <a href="{{route('dashboard-setting-account')}}" class="dropdown-item"
+                  >Settings</a
+                >
+                <div class="dropdown-divider"></div>
+                 <a class="dropdown-item" href="{{ route('logout') }}"
+                 onclick="event.preventDefault();
+                               document.getElementById('logout-form').submit();">
+                  {{ __('Logout') }}
+              </a>
+
+              <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                  @csrf
+              </form>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link d-inline-block mt-2">
+                <img src="/images/icon-cart-empty.svg" alt="" />
+              </a>
+            </li>
+          </ul>
+
+          <ul class="navbar-nav d-block d-lg-none">
+            <li class="nav-item">
+              <a href="#" class="nav-link">
+                Hi, {{Auth::user()->name}}
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link d-inline-block">
+                Cart
+              </a>
+            </li>
+          </ul>
+        @endauth
       </div>
     </div>
   </nav>

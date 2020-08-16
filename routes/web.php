@@ -13,7 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::get('/', 'HomeController@index')->name('home');
-Route::get('/category', 'CategoryController@index')->name('category');
+Route::get('/categories', 'CategoryController@index')->name('category');
+Route::get('/categories/{id}', 'CategoryController@detail')->name('category-detail');
 Route::get('/detail/{id}', 'DetailController@index')->name('detail');
 Route::get('/cart', 'CartController@index')->name('cart');
 Route::get('/success', 'CartController@success')->name('success');
@@ -42,5 +43,6 @@ Route::prefix('admin')
 			Route::resource('category','CategoryController');
 			Route::resource('user','UserController');
 			Route::resource('product','ProductController');
+			Route::resource('product-gallery','ProductGalleryController');
 		});
 Auth::routes();

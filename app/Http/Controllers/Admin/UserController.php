@@ -50,6 +50,7 @@ class UserController extends Controller
                         </div>
                     ';  
                   })
+                  ->addIndexColumn()
                   ->rawColumns(['action'])
                   ->make();
             
