@@ -16,6 +16,7 @@ Route::get('/', 'HomeController@index')->name('home');
 Route::get('/categories', 'CategoryController@index')->name('category');
 Route::get('/categories/{id}', 'CategoryController@detail')->name('category-detail');
 Route::get('/detail/{id}', 'DetailController@index')->name('detail');
+Route::post('/detail/{id}', 'DetailController@add')->name('detail-add');
 Route::get('/cart', 'CartController@index')->name('cart');
 Route::get('/success', 'CartController@success')->name('success');
 
