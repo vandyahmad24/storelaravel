@@ -59,7 +59,7 @@
                   <div class="card-body">
                     <div class="row">
                       <div class="col-md-1">
-                        <img src="{{Storage::url($transaction->product->galleries->first()->photos ?? '')}}" alt="" width="5%">
+                        <img src="{{Storage::url($transaction->product->galleries->first()->photos ?? '')}}" alt="" class="w-75">
                       </div>
                       <div class="col-md-4">
                         {{$transaction->product->name}}
@@ -68,7 +68,7 @@
                         {{$transaction->transaction->user->name ?? ''}}
                       </div>
                       <div class="col-md-3">
-                        12 Januari, 2020
+                        {{$transaction->created_at ?? ''}}
                       </div>
                       <div class="col-md-1 d-none d-md-block">
                         <img src="/images/dashboard-arrow-right.svg" alt="">
